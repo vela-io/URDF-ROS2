@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    urdf_file = 'amr.urdf'
+    urdf_file = 'amr_webot.urdf'
 
     package_description = "amr_description"
 

@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', ['launch/amr_visualize.launch.py']),
         ('share/' + package_name + '/urdf', ['urdf/amr.urdf']),
+        ('share/' + package_name + '/urdf', ['urdf/amr_webot.urdf']),
         ('share/' + package_name + '/rviz', ['rviz/amr.rviz'])
     ],
     install_requires=['setuptools'],

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<robot name="/home/rodrigo/Work/AMR-simulation/src/amr_description/urdf/amr_webot.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="chassi_appearance">
+  </link>
+  
+  <joint name="base_link_chassi_appearance_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassi_appearance"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="chassi_solid">
+  </link>
+  
+  <joint name="base_link_chassi_solid_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassi_solid"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="chassi_appearance_0">
+  </link>
+  
+  <joint name="chassi_solid_chassi_appearance_0_joint" type="fixed">
+    <parent link="chassi_solid"/>
+    <child link="chassi_appearance_0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <joint name="right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel_solid"/>
+    <axis xyz="0.000002 0 -1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0.055 -0.019878 -0.029955" rpy="-1.570794 -1.030113 -1.5708"/>
+  </joint>
+  
+  <link name="right_wheel_solid">
+    <visual>
+      <origin xyz="0.000011 -0.000115 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.000011 -0.000115 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="right_wheel_appearance">
+  </link>
+  
+  <joint name="right_wheel_solid_right_wheel_appearance_joint" type="fixed">
+    <parent link="right_wheel_solid"/>
+    <child link="right_wheel_appearance"/>
+    <origin xyz="0.000011 -0.000115 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="right_wheel_appearance_1">
+  </link>
+  
+  <joint name="right_wheel_solid_right_wheel_appearance_1_joint" type="fixed">
+    <parent link="right_wheel_solid"/>
+    <child link="right_wheel_appearance_1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <joint name="left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel_solid"/>
+    <axis xyz="0.000004 0 -1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="-0.055 -0.02 -0.03" rpy="-1.570788 -1.137305 -1.570805"/>
+  </joint>
+  
+  <link name="left_wheel_solid">
+    <visual>
+      <geometry>
+        <cylinder radius="0.03" length="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.03" length="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="left_wheel_appearance">
+  </link>
+  
+  <joint name="left_wheel_solid_left_wheel_appearance_joint" type="fixed">
+    <parent link="left_wheel_solid"/>
+    <child link="left_wheel_appearance"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="left_wheel_appearance_2">
+  </link>
+  
+  <joint name="left_wheel_solid_left_wheel_appearance_2_joint" type="fixed">
+    <parent link="left_wheel_solid"/>
+    <child link="left_wheel_appearance_2"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="lidar">
+  </link>
+  
+  <joint name="base_link_lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <origin xyz="0 0 0.05" rpy="0 0 1.5708"/>
+  </joint>
+  
+  <link name="lidar_solid">
+  </link>
+  
+  <joint name="lidar_lidar_solid_joint" type="fixed">
+    <parent link="lidar"/>
+    <child link="lidar_solid"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="lidar_appearance">
+  </link>
+  
+  <joint name="lidar_solid_lidar_appearance_joint" type="fixed">
+    <parent link="lidar_solid"/>
+    <child link="lidar_appearance"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="Distance Sensor 1">
+  </link>
+  
+  <joint name="base_link_Distance Sensor 1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Distance Sensor 1"/>
+    <origin xyz="0 0.0515 0" rpy="-1.570795 0 0"/>
+  </joint>
+  
+  <link name="appearance">
+  </link>
+  
+  <joint name="Distance Sensor 1_appearance_joint" type="fixed">
+    <parent link="Distance Sensor 1"/>
+    <child link="appearance"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link name="distance_sensor">
+  </link>
+  
+  <joint name="Distance Sensor 1_distance_sensor_joint" type="fixed">
+    <parent link="Distance Sensor 1"/>
+    <child link="distance_sensor"/>
+    <origin xyz="0 0 0" rpy="0 -1.570795 0"/>
+  </joint>
+
+</robot>

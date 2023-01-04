@@ -10,7 +10,7 @@
 
   <link name="chassis">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 1.0"/>
+      <origin rpy="0 0 0" xyz="1.0 0 0"/>
       <geometry>
         <box size="0.1 0.1 0.1"/>
       </geometry>
@@ -23,5 +23,80 @@
     <parent link="base_link" />
     <child link="chassis" />
   </joint>
+
+
+  <link name="left_wheel">
+    <visual>
+      <origin  rpy="0 1.5707 1.5707" xyz="0.0 0.0 0"> 
+        <geometry>
+          <cylinder length="0.001" radius="0.035"/>
+        </geometry>
+      </origin>
+    </visual>
+  </link>
+
+  <joint name="joint_left_wheel" type="continuous">
+    <parent link="chassis"></parent>
+    <child link="left_wheel"></child>
+  </joint>  
+
+  <link name="right_wheel">
+  </link>
+
+  <link name="front_yaw_link">
+  </link>
+
+  <link name="back_yaw_link">
+  </link>
+
+  <link name="front_roll_link">
+  </link>
+
+  <link name="back_roll_link">
+  </link>
+
+  <link name="front_pitch_link">
+  </link>
+
+  <link name="back_pitch_link">
+  </link>
+
+  
+
+  <joint name="front_pitch_joint" type="fixed">
+    <parent link="front_roll_link"></parent>
+    <child link="front_pitch_link"></child>
+  </joint>
+
+   <joint name="back_pitch_joint" type="fixed">
+    <parent link="back_roll_link"></parent>
+    <child link="back_pitch_link"></child>
+  </joint>
+
+  <joint name="front_roll_joint" type="fixed">
+    <parent link="front_yaw_link"></parent>
+    <child link="front_roll_link"></child>
+  </joint>
+
+  <joint name="back_roll_joint" type="fixed">
+    <parent link="back_yaw_link"></parent>
+    <child link="back_roll_link"></child>
+  </joint>
+
+  <joint name="front_yaw_joint" type="fixed">
+    <parent link="chassis"></parent>
+    <child link="front_yaw_link"></child>
+  </joint>
+
+   <joint name="back_yaw_joint" type="fixed">
+    <parent link="chassis"></parent>
+    <child link="back_yaw_link"></child>
+  </joint>
+
+  <joint name="joint_rigth_wheel" type="continuous">
+    <parent link="chassis"></parent>
+    <child link="rigth_wheel"></child>
+  </joint>
+
   
 </robot>
